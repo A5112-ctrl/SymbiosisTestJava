@@ -44,9 +44,6 @@ public class AllEmployeeController {
 	@GetMapping("/existingEmployee")
 	public String existingEmp(Model model) {
 		List<Employee> list=service.GetAllEmployee();
-//		for(Employee e:list) {
-//			System.out.println(e.getFirstName());
-//		}
 		model.addAttribute("employees", list);
 		return "existingEmployee";
 		
@@ -62,7 +59,6 @@ public class AllEmployeeController {
 	@GetMapping("/updatedExisting")
 	public String updateEmpForm(@RequestParam("id" )long id,Model model) {
 		Employee emp=service.FindEmployeeByID(id);
-		//System.out.println(emp);
 		model.addAttribute("emp", emp);
 		return "updateEmployee";
 	}
